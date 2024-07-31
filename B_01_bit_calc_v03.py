@@ -5,13 +5,19 @@ def statement_generator(statement, decoration):
 
 # Displays instructions
 def instructions():
-    statement_generator("Instructions", "-")
+    statement_generator("Details and Instructions", "-")
 
     print('''
-Instructions go here
-- instruction 1
-- instruction 2
-- etc
+- Details
+- This Program lets you:
+- Find out how many bits are needed to represent text.
+- Find out how many pixels and bits are in a image.
+- Find out to represent an integer in binary and how many bits are to represent it.
+
+- Instructions
+- enter on e of the following file types 
+- image, integer, text, 
+- type "xxx" to exit
     ''')
 
 
@@ -46,7 +52,7 @@ def get_filetype():
 # Enter a nuber that is more than zero
 def int_check(question, low):
 
-    error = "Please enter number that is more than zero\n"
+    error = "Please enter a number than is more than or equal to 0\n"
 
     while True:
         try:
@@ -119,7 +125,7 @@ def calc_text_bits():
 # Main routine goes here
 
 # Display instructions if requested
-want_instructions = input("Press <enter> to read the instructions "
+want_instructions = input("Press <enter> to read the Details and instructions "
                           "or any key to continue")
 if want_instructions == "":
     instructions()
@@ -134,7 +140,7 @@ while True:
     # if user chose 'i' ask if they want an image / integer
 
     if file_type == 'i':
-        want_image = input("Press <enter> for and integer or any key for and image.  ")
+        want_image = input("Press <enter> for an integer or any key for an image.  ")
         if want_image == "":
             file_type = "integer"
         else:
